@@ -1,0 +1,37 @@
+# Global Compliance Rules for all kodflow repositories
+# Applied to ALL repos via metadata.yaml
+
+pr_compliances:
+  # Security
+  - title: "No Secrets in Code"
+    compliance_label: true
+    objective: "Prevent hardcoded secrets, API keys, tokens, or credentials in source code"
+    success_criteria: "No secrets detected; sensitive values use environment variables or secret management"
+    failure_criteria: "Hardcoded API keys, tokens, passwords, or connection strings found in code"
+
+  - title: "Input Validation"
+    compliance_label: true
+    objective: "All external inputs must be validated before processing"
+    success_criteria: "User inputs, API parameters, and file contents are validated/sanitized"
+    failure_criteria: "External data used directly without validation, enabling injection attacks"
+
+  # Documentation
+  - title: "CLAUDE.md Compliance"
+    compliance_label: true
+    objective: "Changes must follow project conventions defined in CLAUDE.md"
+    success_criteria: "Code follows structure, naming, and patterns from CLAUDE.md"
+    failure_criteria: "Violations of project conventions without justification"
+
+  # Testing
+  - title: "Test Coverage for Changed Code"
+    compliance_label: true
+    objective: "Modified logic should have corresponding test coverage"
+    success_criteria: "New/modified functions have unit tests or test updates"
+    failure_criteria: "Significant logic changes without any test coverage"
+
+  # Code Quality
+  - title: "No Debug Code"
+    compliance_label: true
+    objective: "Debug code must not be committed to main branches"
+    success_criteria: "No console.log, print statements, TODO comments, or debug flags"
+    failure_criteria: "Debug statements, commented-out code blocks, or temporary fixes"
