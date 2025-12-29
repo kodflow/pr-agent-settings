@@ -1,0 +1,38 @@
+# DevContainer Template Specific Compliance Rules
+# https://github.com/kodflow/devcontainer-template
+
+pr_compliances:
+  # DevContainer Structure
+  - title: "Source Code in /src"
+    compliance_label: true
+    objective: "All source code must be placed in /src directory as per project structure"
+    success_criteria: "New code files are created under /workspace/src/"
+    failure_criteria: "Source code files created at project root or in non-standard locations"
+
+  # Language Rules
+  - title: "RULES.md Version Compliance"
+    compliance_label: true
+    objective: "Language versions must match or exceed RULES.md requirements"
+    success_criteria: "Dependencies and runtime versions meet minimum requirements in RULES.md"
+    failure_criteria: "Downgraded versions or deprecated APIs used"
+
+  # Shell Scripts
+  - title: "ShellCheck Compliance"
+    compliance_label: true
+    objective: "Shell scripts must pass ShellCheck static analysis"
+    success_criteria: "No ShellCheck errors (SC codes) in .sh files"
+    failure_criteria: "Unquoted variables, missing error handling, or unsafe patterns"
+
+  # Docker/DevContainer
+  - title: "Dockerfile Best Practices"
+    compliance_label: true
+    objective: "Dockerfiles follow security and efficiency best practices"
+    success_criteria: "Multi-stage builds, pinned versions, non-root user, minimal layers"
+    failure_criteria: "Running as root, unpinned base images, secrets in build args"
+
+  # Protected Paths
+  - title: "Protected Directory Safety"
+    compliance_label: true
+    objective: "Changes to .claude/ and .devcontainer/ require explicit justification"
+    success_criteria: "Protected path changes are documented and intentional"
+    failure_criteria: "Accidental or unexplained modifications to protected directories"

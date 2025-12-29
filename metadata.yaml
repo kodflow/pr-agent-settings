@@ -1,0 +1,14 @@
+# Qodo Merge Compliance Repository Mapping
+# https://qodo-merge-docs.qodo.ai/tools/compliance/
+
+# DevContainer Template
+devcontainer-template:
+  pr_compliance_checklist_paths:
+    - "global"
+    - "devcontainer-template"
+
+# Future repos can be added here:
+# my-other-repo:
+#   pr_compliance_checklist_paths:
+#     - "global"
+#     - "groups/backend_repos"
